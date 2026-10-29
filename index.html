@@ -1,0 +1,598 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anatasya Dwi Oktavia | Portfolio</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #333333;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #999999;
+        }
+
+        /* GENERAL SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .label {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888888;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            line-height: 1.3;
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            max-width: 650px;
+            color: #666666;
+            margin-bottom: 35px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 5vw, 68px);
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #888888;
+        }
+
+        .hero-text > p:not(.label) {
+            max-width: 550px;
+            color: #666666;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #222222;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #555555;
+            transform: translateY(-2px);
+        }
+
+        /* PROFILE PHOTO */
+        .hero-image {
+            flex: 0 0 340px;
+            width: 340px;
+            height: 420px;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* ABOUT ME */
+        .about {
+            background-color: #f7f7f7;
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .about-content > p:not(.label) {
+            color: #555555;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            margin-top: 30px;
+            border-top: 1px solid #dddddd;
+            padding-top: 20px;
+        }
+
+        .info p {
+            margin-bottom: 10px;
+        }
+
+        .info strong {
+            display: inline-block;
+            min-width: 145px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .skill-card {
+            padding: 28px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #999999;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-number {
+            color: #999999;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .skill-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #666666;
+            font-size: 14px;
+        }
+
+        /* ACHIEVEMENT */
+        .achievement {
+            background-color: #f7f7f7;
+        }
+
+        .achievement-card {
+            padding: 25px;
+            background-color: #ffffff;
+            border-left: 4px solid #333333;
+            margin-bottom: 20px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .achievement-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .achievement-card p {
+            color: #666666;
+        }
+
+        /* CONTACT */
+        .contact-content {
+            max-width: 700px;
+        }
+
+        .contact-links {
+            margin-top: 25px;
+        }
+
+        .contact-links p {
+            margin-bottom: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-links strong {
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        .contact-links a {
+            color: #333333;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px 8%;
+            border-top: 1px solid #eeeeee;
+            color: #777777;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .hero {
+                gap: 35px;
+            }
+
+            .hero-image {
+                flex-basis: 280px;
+                width: 280px;
+                height: 360px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 18px 5%;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+
+            .hero {
+                min-height: auto;
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                gap: 35px;
+                padding-top: 50px;
+            }
+
+            .hero-image {
+                flex: none;
+                width: 100%;
+                max-width: 320px;
+                height: 350px;
+                align-self: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info strong {
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">ANATASYA.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#achievement">Achievement</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <p class="label">Personal Portfolio · 2026</p>
+
+            <h1>
+                Hi, I'm<br>
+                <span>Anatasya Dwi Oktavia.</span>
+            </h1>
+
+            <p>
+                Mahasiswa S1 Pendidikan Teknologi Informasi di
+                Universitas Negeri Surabaya yang tertarik pada
+                UI/UX Design, Graphic Design, dan Web Development.
+            </p>
+
+            <a href="#about" class="button">Kenali Saya →</a>
+
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="foto_tasya.jpeg"
+                alt="Foto Anatasya Dwi Oktavia"
+            >
+        </div>
+
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <p class="label">Introduction</p>
+
+            <h2 class="section-title">About Me</h2>
+
+            <p>
+                Halo! Saya Anatasya Dwi Oktavia, mahasiswa
+                Program Studi S1 Pendidikan Teknologi Informasi
+                di Universitas Negeri Surabaya.
+            </p>
+
+            <p>
+                Saya memiliki ketertarikan pada dunia teknologi
+                informasi dan desain kreatif. Saya senang
+                mempelajari hal baru, mengembangkan kreativitas,
+                serta mengeksplorasi cara teknologi dapat
+                menciptakan pengalaman yang bermanfaat.
+            </p>
+
+            <div class="info">
+                <p>
+                    <strong>Nama:</strong>
+                    Anatasya Dwi Oktavia
+                </p>
+
+                <p>
+                    <strong>NIM:</strong>
+                    26050974007
+                </p>
+
+                <p>
+                    <strong>Program Studi:</strong>
+                    S1 Pendidikan Teknologi Informasi
+                </p>
+
+                <p>
+                    <strong>Universitas:</strong>
+                    Universitas Negeri Surabaya
+                </p>
+
+                <p>
+                    <strong>Angkatan:</strong>
+                    2026
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WHAT I CAN DO -->
+    <section id="skills">
+
+        <p class="label">My Expertise</p>
+
+        <h2 class="section-title">What I Can Do</h2>
+
+        <p class="section-description">
+            Beberapa bidang yang saya minati dan terus
+            kembangkan dalam perjalanan belajar saya.
+        </p>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <p class="skill-number">01 / DESIGN</p>
+
+                <h3>UI/UX Design</h3>
+
+                <p>
+                    Mempelajari desain antarmuka dan pengalaman
+                    pengguna agar aplikasi mudah dipahami
+                    dan nyaman digunakan.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <p class="skill-number">02 / CREATIVE</p>
+
+                <h3>Graphic Design</h3>
+
+                <p>
+                    Mengeksplorasi kreativitas visual melalui
+                    komposisi, tipografi, ilustrasi,
+                    dan desain grafis.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <p class="skill-number">03 / TECHNOLOGY</p>
+
+                <h3>Web Development</h3>
+
+                <p>
+                    Mempelajari dasar pembuatan website
+                    menggunakan HTML, CSS, dan teknologi web.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ACHIEVEMENT -->
+    <section class="achievement" id="achievement">
+
+        <p class="label">My Journey</p>
+
+        <h2 class="section-title">Achievement</h2>
+
+        <p class="section-description">
+            Pengalaman dan kegiatan yang menjadi bagian
+            dari proses belajar serta pengembangan diri saya.
+        </p>
+
+        <div class="achievement-card">
+
+            <h3>Pengalaman Paskibra</h3>
+
+            <p>
+                Berpartisipasi dalam kegiatan LKBB tingkat
+                nasional dan memperoleh trofi bersama tim.
+                Pengalaman ini mengajarkan kedisiplinan,
+                tanggung jawab, dan kerja sama.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>Pengembangan Keterampilan Teknologi</h3>
+
+            <p>
+                Mempelajari dasar pemrograman, basis data,
+                dan desain antarmuka sebagai bagian dari
+                perjalanan pendidikan di bidang teknologi informasi.
+            </p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>Pengembangan Kreativitas</h3>
+
+            <p>
+                Mengembangkan minat dalam menggambar,
+                desain grafis, dan eksplorasi ide kreatif
+                untuk menghasilkan karya visual.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="contact-content">
+
+            <p class="label">Get In Touch</p>
+
+            <h2 class="section-title">Let's Connect!</h2>
+
+            <p class="section-description">
+                Saya terbuka untuk belajar, berbagi ide,
+                dan berkolaborasi dalam kegiatan yang berkaitan
+                dengan teknologi informasi dan desain kreatif.
+            </p>
+
+            <div class="contact-links">
+
+                <p>
+                    <strong>Email:</strong>
+                    <span>tasyaoktavia666@gmail.com</span>
+                </p>
+
+                <p>
+                    <strong>GitHub:</strong>
+                    <span>https://github.com/tasyaoktavia666-oss</span>
+                </p>
+
+                <p>
+                    <strong>LinkedIn:</strong>
+                    <span>https://www.linkedin.com/in/anatasya-oktavia-929406416?utm_source=share_via&utm_content=profile&utm_medium=member_android</span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Anatasya Dwi Oktavia.
+            Made with curiosity.
+        </p>
+    </footer>
+
+</body>
+</html>
+```
